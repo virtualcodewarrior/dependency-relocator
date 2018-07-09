@@ -6,7 +6,7 @@
 
 const fs = require('fs-extra');
 
-const targetLocation = process.argv[2] || '.src/third_party';
+const targetLocation = process.argv[2] || './src/third_party';
 
 const copyDependencyTree = (pkg) => {
 	if (pkg.dependencies) {

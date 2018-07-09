@@ -1,6 +1,6 @@
 {
   "name": "dependency-relocator",
-  "version": "v0.1.0",
+  "version": "v0.1.1",
   "description": "Copy production NPM dependencies to a custom location",
   "main": "dependency-relocator.js",
   "license": "MIT",
