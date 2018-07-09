@@ -1,28 +1,31 @@
 {
   "name": "dependency-relocator",
-  "version": "0.1.0",
+  "version": "v0.1.0",
   "description": "Copy production NPM dependencies to a custom location",
-  "main": "dependencyRelocator.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/virtualcodewarrior/dependency-relocator.git"
-  },
+  "main": "dependency-relocator.js",
+  "license": "MIT",
+  "author": "Rodney Draaisma",
   "keywords": [
     "dependency",
     "NPM",
     "production",
     "hosted"
   ],
-  "author": "Rodney Draaisma",
-  "license": "MIT",
+  "homepage": "https://github.com/virtualcodewarrior/dependency-relocator#readme",
   "bugs": {
     "url": "https://github.com/virtualcodewarrior/dependency-relocator/issues"
   },
-  "homepage": "https://github.com/virtualcodewarrior/dependency-relocator#readme",
+  "files": [
+    "dependency-relocator.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/virtualcodewarrior/dependency-relocator.git"
+  },
   "dependencies": {
     "fs-extra": "^6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0"
   }
 }

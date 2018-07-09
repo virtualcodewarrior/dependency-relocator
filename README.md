@@ -32,13 +32,18 @@ This script can be run as a post install script for npm install and will copy an
 It will also recursively go into the package.json files of those dependencies and copy all its dependencies.
 The end result is that all production dependencies listed in the package.json file end up in your preferred folder instead which you can then include instead of node_modules.
 
+## installation
+```
+npm install dependency-relocator --save-dev
+```
+
 ## usage
 Copy the script into the same location as your project's package.json file.
 Modify you package.json file to add a postinstall step that calls the script. e.g.
 ```
 {
   "scripts": {
-    "postinstall": "node dependencyRelocator.js './src/my dependencies'"
+    "postinstall": "node ./node_modules/dependency-relocator/dependency-relocator.js ./src/my-dependencies"
   },
   "devDependencies": {
     "babel-minify": "^0.4.3",
@@ -67,3 +72,12 @@ Modify you package.json file to add a postinstall step that calls the script. e.
 The script has one optional parameter that specifies the target location. If this is not specified it will default to ```./src/third_party```
 Once you have modified your package.json file, you re-run npm install and all the dependencies listed in the dependencies section will be copied to the specified target directory.
 Note that any old versions or existing directories in the specified target location, will be overwritten.
+Also note that executing
+```
+npm install --save some_library
+```
+will not add the dependency to the right location, only executing
+```
+npm install
+```
+will do that.
