@@ -11,7 +11,9 @@ const targetLocation = process.argv[2] || './src/third_party';
 const copyDependencyTree = (pkg) => {
 	if (pkg.dependencies) {
 		Object.keys(pkg.dependencies).forEach((p_Dependency) => {
-			p_Dependency = p_Dependency.replace(/\/[^/]+$/, '');
+			if (!/^@.*/.test(p_Dependency)) {
+				p_Dependency = p_Dependency.replace(/\/[^/]+$/, '');
+			}
 			// cleanup before copying new stuff
 			fs.removeSync(`${targetLocation}/${p_Dependency}`);
 			fs.copySync(`./node_modules/${p_Dependency}`, `${targetLocation}/${p_Dependency}`, { overwrite: true });
